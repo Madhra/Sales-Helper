@@ -1,0 +1,46 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.opcion {
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid #d407c3;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.opcion:last-child {
+  border: 5px solid #c3d407;
+}
+
+.opcion p {
+  text-align: center;
+}
+
+@media(max-width: 600px) {
+  .opciones {
+    display: flex;
+    flex-direction: column;
+  }
+  .opcion {
+    margin-top: 50px;
+  }
+}

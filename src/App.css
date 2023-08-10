@@ -1,0 +1,25 @@
+body{
+  font-family: 'Noto Sans Vithkuqi', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+}
+
+nav{
+  background-color: #07c3d4;
+  height: 100px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1{
+  color: #FFF;
+  font-size: 60px;
+}
+
+@media (max-width: 480px) {
+  nav{
+    height: 200px;
+  }
+}

@@ -1,0 +1,20 @@
+label{
+    display: flex;
+    flex-direction: column; 
+    margin: 10px 0 0 0;
+}
+
+input:last-child{
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    border: none;
+    background-color: #d407c3;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+input:last-child:hover{
+    cursor: pointer;
+}
