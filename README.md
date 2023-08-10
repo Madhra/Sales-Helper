@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Sales Helper
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+> Esta version NO esta terminada no todas las funciones que aparecen funcionan solo la de ventas.
+---
 
-In the project directory, you can run:
+Esta aplicacion esta enfocada a los vendedores informales los cuales no llevan un regitro de sus ventas las cuales pueden terminar en problemas por no llevar las cuentas, el proposito de esta aplicacion es llevar las  cuentas de una forma sencilla donde solo tengas que colocar los prodcutos que vendes y darle click a ese producto cada que se realice una venta, de esta forma se lleva un registro rapido y sencillo de las ventas del dia.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Puedes Agregar cuantos productos deses incluso puedes poner emojis en el nombre para hacerlo mas facil de encontrar.
 
-### `npm test`
+- Lleva control de tus ventas en tiempo real al ver el total vendido hasta el momento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Facil control, cada que realices una venta, simplemente dando un click en el producto podras llevar un control de cuantos productos se han vendido.
 
-### `npm run build`
+## How to use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Muy simple de usar simplemente da click en Ventas, y se desplegara un menu con un cuadro que dice Nuevo Producto, da click ahi y veras un formularion con 2 cosas, el nombre del producto que vas a vender y el precio al que lo vendes, al llenar el formulario y agregar el producto veras que se habra desplegado en la parte superior el producto que acabas de agregar, para registar la venta, simplemente da click en el recuadro donde aparece el producto que acabas de vender y automaticamente veras como se incrmenta en 1 el producto vendido y el subtotal se actualizara dependiendo de cuantos productos has vendido
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Esta app ha sido desarrolla en React con create-react-app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Colaborators
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dario Carbajal Baldonado.
