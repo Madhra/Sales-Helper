@@ -4,30 +4,33 @@ import AddShipmentProductForm from "../AddShipmentProductForm/AddShipmentProduct
 import './Shipments.css';
 
 function Shipments() {
-
     const [shipments, setShipments] = useState([]);
-    const [productos, setProductos] = useState([]);
-    const [newIndex, setNewIndex] = useState(-1);
     const [form, setForm] = useState(true);
-
     const addShipment = (newShipment) => {
         setShipments(prevShipment => [...prevShipment, newShipment]);
     }
-    const updateProductos = (newProductObject) => {
-        setProductos(prevProducto => [...prevProducto, newProductObject]);
+    const removeShipment = () => {
+        setShipments(shipments.filter(item => Object.keys(item).length !== 0));
+    };
+    const updateShipment = (product) => {
+        for(let i = 0; i < shipments.length; i++){
+            if (product.id === shipments[i].id){
+                shipments[i].productos.push(product.producto);
+                shipments[i].precios.push(product.precio);
+                shipments[i].cantidades.push(product.cantidad)
+            }
+        }
     }
-    const updateIndex = (plusIndex) => setNewIndex(plusIndex);
     const displayForm = () => setForm(!form);
 
-    return (
-        <>
-            <h3>Envios</h3>
-
-            <div className="productos">
-                <h4>Agregar envio pendiente</h4>
-            </div>
-            <table>
-                <thead>
+        return (
+            <>
+                <h3>Envios</h3>
+                <div className="productos">
+                    <h4>Agregar envio pendiente</h4>
+                </div>
+                <table>
+                    <thead>
                     <th>Nombre</th>
                     <th>Direccion</th>
                     <th>Prodcutos</th>
@@ -35,43 +38,40 @@ function Shipments() {
                     <th>Cantidad</th>
                     <th>Entregado</th>
                     <th>Agregar Producto</th>
-                </thead>
-                <tbody>
-                    {shipments ? shipments.map((element, index) =>{
+                    </thead>
+                    <tbody>
+                    {shipments ? shipments.map((element, index) => {
 
                         return (
-                            <tr>
+                            <tr key={index}>
                                 <td>{element.name}</td>
                                 <td>{element.address}</td>
-                                <td>
-                                    {productos ? productos.map((element) =>{
-                                        return index >= element.id ? <p>{element.producto}</p> : null
-                                    }) : null}
-                                </td>
-                                <td>
-                                    {productos ? productos.map((element) =>{
-                                        return index >= element.id ? <p>{element.precio}</p> : null
-                                    }) : null}
-                                </td>
-                                <td>
-                                    {productos ? productos.map((element) =>{
-                                        return index >= element.id ? <p>{element.cantidad}</p> : null
-                                    }) : null}
-                                </td>
+                                <td>{element.productos ? element.productos.map(producto => {
+                                    return <p>{producto}</p>
+                                }) : null}</td>
+                                <td>{element.precios ? element.precios.map(precio => {
+                                    return <p>{precio}</p>
+                                }) : null}</td>
+                                <td>{element.cantidades ? element.cantidades.map(cantidad => {
+                                    return <p>{cantidad}</p>
+                                }) : null}</td>
                                 <td><input type="checkbox"/></td>
                                 <td>
                                     <AddShipmentProductForm
-                                        updateProductos={updateProductos}
+                                        id={index}
+                                        updateShipment={updateShipment}
+                                        removeShipment={removeShipment}
                                     />
                                 </td>
                             </tr>
                         )
                     }) : null}
-                </tbody>
-            </table>
-            <AddShipmentForm addShipment={addShipment}/>
-        </>
-    )
+                    </tbody>
+                </table>
+                <AddShipmentForm addShipment={addShipment}/>
+            </>
+        )
+
 }
 
 export default Shipments
