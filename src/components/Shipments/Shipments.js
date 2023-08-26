@@ -25,7 +25,7 @@ function Shipments() {
 
         return (
             <>
-                <h3>Envios</h3>
+                <h3 id="envios">Envios</h3>
                 <div className="productos">
                     <h4>Agregar envio pendiente</h4>
                 </div>
