@@ -3,12 +3,17 @@ import React, {useState} from "react";
 function AddShipmentForm( { addShipment } ) {
     const [nombreValue, setNombreValue] = useState('');
     const [direccionValue, setDireccionValue] = useState('');
+    const [id, setID] = useState(0);
 
     const updateNombreValue = ( { target } ) => setNombreValue(target.value);
     const updateDireccionValue = ( { target } ) => setDireccionValue(target.value);
+    const updateID = () =>{
+        setID(id + 1);
+    }
     const handleSubmit = (event) =>{
         event.preventDefault();
-        addShipment( { name: nombreValue, address: direccionValue } );
+        updateID();
+        addShipment( { id: id, name: nombreValue, address: direccionValue, productos: [], precios: [], cantidades: [] } );
         event.target.reset();
     }
 
