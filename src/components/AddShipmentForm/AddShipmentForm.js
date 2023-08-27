@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import "./AddShipmentForm.css"
 function AddShipmentForm( { addShipment } ) {
     const [nombreValue, setNombreValue] = useState('');
     const [direccionValue, setDireccionValue] = useState('');
@@ -13,7 +13,14 @@ function AddShipmentForm( { addShipment } ) {
     const handleSubmit = (event) =>{
         event.preventDefault();
         updateID();
-        addShipment( { id: id, name: nombreValue, address: direccionValue, productos: [], precios: [], cantidades: [] } );
+        addShipment( { id: id,
+                       name: nombreValue,
+                       address: direccionValue,
+                       productos: [],
+                       precios: [],
+                       cantidades: [],
+                       total: 0,
+        } );
         event.target.reset();
     }
 
@@ -25,7 +32,7 @@ function AddShipmentForm( { addShipment } ) {
             <label>Direccion:</label>
             <input type="text" id="direccion" onChange={updateDireccionValue}/>
 
-            <input type="submit" value="Agregar Envio" />
+            <input type="submit" value="Agregar Envio" id="boton"/>
         </form>
     )
 }

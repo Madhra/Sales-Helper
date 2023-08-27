@@ -12,7 +12,7 @@ function AddPrductForm( { id, updateShipment, removeShipment } ) {
     const updateCantidad = ( { target } ) => setCantidad(target.value);
     const handleSubmit = (event) => {
         event.preventDefault();
-        updateShipment({ id: id, producto: productoValue, precio: precioValue, cantidad: cantidad });
+        updateShipment({ id: id, producto: productoValue, precio: precioValue, cantidad: cantidad});
         removeShipment();
         event.target.reset();
     }
@@ -29,7 +29,7 @@ function AddPrductForm( { id, updateShipment, removeShipment } ) {
             <label htmlFor='cantidad'>Cantidad:</label>
             <input id='cantidad' type='number' required onChange={updateCantidad}/>
 
-            <input type="submit" value='Agregar producto' />
+            <input type="submit" value='Agregar producto' id="productoboton"/>
         </form>
     )
 }
