@@ -29,6 +29,10 @@ function Shipments() {
         }
         return total
     }
+
+    const getCheckStatus = ( { target } ) => {
+        console.log(target);
+    }
     const displayForm = () => setForm(!form);
 
         return (
@@ -58,7 +62,7 @@ function Shipments() {
                                 </td>
                                 <td>
                                     <h4>Entregado</h4>
-                                    <input type="checkbox"/>
+                                    <input type="checkbox" onClick={getCheckStatus}/>
                                 </td>
                                 <td>
                                     <AddShipmentProductForm
