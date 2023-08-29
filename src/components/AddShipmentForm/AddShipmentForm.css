@@ -1,0 +1,12 @@
+#form {
+    display: flex;
+    flex-direction: column;
+}
+input{
+    border: 2px solid #c3d407;
+    border-radius: 10px;
+}
+
+#boton{
+    background-color: #c3d407;
+}

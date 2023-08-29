@@ -1,7 +1,51 @@
-#envios {
+#shipment {
     background-color: #07c3d4;
     color: white;
     width: 50%;
     text-align: center;
     font-size: 36px;
+}
+
+.contenido tr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pedido {
+    margin-top: 20px;
+    text-align: center;
+    border: 5px solid #c3d407;
+    padding: 0 20px 20px 20px;
+    border-radius: 20px;
+    max-height: 100%;
+    height: auto;
+}
+
+.pedido h4{
+    font-size: 24px;
+}
+
+.pedido input[type=checkbox]{
+    transform: scale(2);
+}
+
+.usuario {
+    height: 100%;
+    width: 120%;
+    background-color: #c3d407;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.usuario h5{
+    margin: 10px 0;
+}
+
+@media (max-width: 480px) {
+    #shipment{
+        width: 100%;
+    }
 }

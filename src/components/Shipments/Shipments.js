@@ -6,6 +6,7 @@ import './Shipments.css';
 function Shipments() {
     const [shipments, setShipments] = useState([]);
     const [form, setForm] = useState(true);
+
     const addShipment = (newShipment) => {
         setShipments(prevShipment => [...prevShipment, newShipment]);
     }
@@ -21,41 +22,46 @@ function Shipments() {
             }
         }
     }
+    const getTotal = (objeto) => {
+        let total = 0
+        for(let i = 0; i < objeto.cantidades.length; i++){
+            total += objeto.precios[i] * objeto.cantidades[i];
+        }
+        return total
+    }
+
+    
     const displayForm = () => setForm(!form);
 
         return (
             <>
-                <h3 id="envios">Envios</h3>
+                <h3 id="shipment">Envios</h3>
                 <div className="productos">
-                    <h4>Agregar envio pendiente</h4>
                 </div>
                 <table>
-                    <thead>
-                    <th>Nombre</th>
-                    <th>Direccion</th>
-                    <th>Prodcutos</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Entregado</th>
-                    <th>Agregar Producto</th>
-                    </thead>
-                    <tbody>
+                    <tbody className="contenido">
                     {shipments ? shipments.map((element, index) => {
-
                         return (
-                            <tr key={index}>
-                                <td>{element.name}</td>
-                                <td>{element.address}</td>
-                                <td>{element.productos ? element.productos.map(producto => {
-                                    return <p>{producto}</p>
-                                }) : null}</td>
-                                <td>{element.precios ? element.precios.map(precio => {
-                                    return <p>{precio}</p>
-                                }) : null}</td>
-                                <td>{element.cantidades ? element.cantidades.map(cantidad => {
-                                    return <p>{cantidad}</p>
-                                }) : null}</td>
-                                <td><input type="checkbox"/></td>
+                            <tr key={index} className="pedido">
+                                <td className="usuario">
+                                    <h5>{element.name}</h5>
+                                    <h5>{element.address}</h5>
+                                </td>
+                                <td>
+                                    <h4>Productos</h4>
+                                    {element.productos ? element.productos.map((producto, i    ) => {
+                                    return <p>{element.cantidades[i]} {producto} ${element.precios[i] * element.cantidades[i]}</p>
+                                }) : null}
+                                </td>
+                                <td>
+                                    <h4>Total: ${
+                                        element.total = getTotal(element)
+                                    }</h4>
+                                </td>
+                                <td>
+                                    <h4>Entregado</h4>
+                                    <input type="checkbox" onClick={getCheckStatus}/>
+                                </td>
                                 <td>
                                     <AddShipmentProductForm
                                         id={index}
