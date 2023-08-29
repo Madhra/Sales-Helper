@@ -30,9 +30,7 @@ function Shipments() {
         return total
     }
 
-    const getCheckStatus = ( { target } ) => {
-        console.log(target);
-    }
+    
     const displayForm = () => setForm(!form);
 
         return (
