@@ -35,45 +35,29 @@ function Shipments() {
             <>
                 <h3 id="shipment">Envios</h3>
                 <div className="productos">
-                    <h4>Agregar envio pendiente</h4>
                 </div>
                 <table>
-                    <thead>
-                        <tr className="encabezado">
-                            <th>Nombre</th>
-                            <th>Direccion</th>
-                            <th>Prodcutos</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>SubTotal</th>
-                            <th>Entregado</th>
-                            <th>Agregar Producto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    <tbody className="contenido">
                     {shipments ? shipments.map((element, index) => {
                         return (
                             <tr key={index} className="pedido">
-                                <td>{element.name}</td>
-                                <td>{element.address}</td>
-                                <td>{element.productos ? element.productos.map(producto => {
-                                    return <p>{producto}</p>
-                                }) : null}</td>
-                                <td>{element.precios ? element.precios.map(precio => {
-                                    return <p>{precio}</p>
-                                }) : null}</td>
-                                <td>{element.cantidades ? element.cantidades.map(cantidad => {
-                                    return <p>{cantidad}</p>
-                                }) : null}</td>
-                                <td>
-                                    {element.cantidades ? element.cantidades.map((cantidad, indice) => {
-                                    return <p>{cantidad * element.precios[indice]}</p>
-                                    }) : null}
-                                    <p>Total: ${
-                                        element.total = getTotal(element)
-                                    }</p>
+                                <td className="usuario">
+                                    <h5>{element.name}</h5>
+                                    <h5>{element.address}</h5>
                                 </td>
                                 <td>
+                                    <h4>Productos</h4>
+                                    {element.productos ? element.productos.map((producto, i    ) => {
+                                    return <p>{element.cantidades[i]} {producto} ${element.precios[i] * element.cantidades[i]}</p>
+                                }) : null}
+                                </td>
+                                <td>
+                                    <h4>Total: ${
+                                        element.total = getTotal(element)
+                                    }</h4>
+                                </td>
+                                <td>
+                                    <h4>Entregado</h4>
                                     <input type="checkbox"/>
                                 </td>
                                 <td>
